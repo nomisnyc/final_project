@@ -1,0 +1,9 @@
+User.delete_all
+Classroom.delete_all
+Subject.delete_all
+Assignment.delete_all
+Question.delete_all
+Tag.delete_all
+Textbook.delete_all
+Parent.delete_all
+Response.delete_all
