@@ -1,0 +1,4 @@
+%h3= @assignment.name
+%p.no_margin.tiny_text QUIZ TAGS
+- @assignment.tags.each do |tag|
+  .label.success.round= tag.name

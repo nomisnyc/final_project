@@ -10,6 +10,12 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require 'foundation-4/js/vendor/custom.modernizr.js'
+//= require 'foundation-4/js/foundation.min.js'
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require d3.v3
+//= require moment
+//= require sugar
+//= require underscore
+//= require final
