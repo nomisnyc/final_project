@@ -1,7 +1,11 @@
+<br>
+Enter answer choice
+<br>
 = form_for @answer, :remote => true do |f|
   = f.label   :text, 'Choice'
   = f.text_field :text
   = f.label 'correct answer?'
   = f.check_box :is_correct
   = hidden_field_tag :question_id, @question.id
+  <br>
   = f.submit nil, :class => 'small button submit'

@@ -1,3 +1,4 @@
+%h1 Add Questions
 = form_for @question, :remote => true do |f|
   = f.text_area :text, :autofocus => true, :placeholder=>'Enter question here'
   = hidden_field_tag :assignment_id, @assignment.id
