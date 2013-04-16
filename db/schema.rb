@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(:version => 20130416185829) do
 
   create_table "classrooms", :force => true do |t|
     t.string   "subject"
-    t.integer  "teach_id"
+    t.integer  "teacher_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(:version => 20130416185829) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "questions_users", :id => false, :force => true do |t|
+  create_table "questions_tags", :id => false, :force => true do |t|
     t.integer "qustion_id"
     t.integer "tag_id"
   end

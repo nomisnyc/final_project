@@ -1,0 +1,10 @@
+.row
+  %h2
+    Create a New Classroom
+  .large-6.columns
+    #classroom_form
+      = form_tag @classroom, :remote => true do |f|
+      = f.text_field :subject, :placeholder => 'Subject'
+      = f.text_field :teacher_id, :placeholder => 'Teacher ID'
+      = f.submit 'Create Classroom', :class => 'button tiny radius success'
+      
