@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -19,3 +20,14 @@
 //= require sugar
 //= require underscore
 //= require final
+=======
+//= require jquery
+//= require jquery_ujs
+//= require 'foundation/js/vendor/custom.modernizr.js'
+//= require 'foundation/js/foundation.min.js'
+//= require 'reveal/jquery.reveal.js'
+//= require 'morris/spec/vendor/raphael-2.1.0.min.js'
+//= require 'morris/morris.min.js'
+//= require 'underscore.js'
+//= require 'javascript.js'
+>>>>>>> a9ba6bb243db98d109a2de09d358504c32567653

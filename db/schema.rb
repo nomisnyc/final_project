@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130416001611) do
+=======
+ActiveRecord::Schema.define(:version => 20130414193527) do
+>>>>>>> a9ba6bb243db98d109a2de09d358504c32567653
 
   create_table "answers", :force => true do |t|
     t.text     "text"
@@ -28,17 +32,24 @@ ActiveRecord::Schema.define(:version => 20130416001611) do
     t.string   "source_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+<<<<<<< HEAD
     t.string   "name"
   end
 
   create_table "assignments_tags", :id => false, :force => true do |t|
     t.integer "assignment_id"
     t.integer "tag_id"
+=======
+>>>>>>> a9ba6bb243db98d109a2de09d358504c32567653
   end
 
   create_table "classrooms", :force => true do |t|
     t.string   "subject"
+<<<<<<< HEAD
     t.integer  "teach_id"
+=======
+    t.integer  "teacher_id"
+>>>>>>> a9ba6bb243db98d109a2de09d358504c32567653
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -68,7 +79,11 @@ ActiveRecord::Schema.define(:version => 20130416001611) do
     t.datetime "updated_at",    :null => false
   end
 
+<<<<<<< HEAD
   create_table "questions_users", :id => false, :force => true do |t|
+=======
+  create_table "questions_tags", :id => false, :force => true do |t|
+>>>>>>> a9ba6bb243db98d109a2de09d358504c32567653
     t.integer "qustion_id"
     t.integer "tag_id"
   end

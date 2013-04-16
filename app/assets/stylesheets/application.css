@@ -1,4 +1,13 @@
 /*
+<<<<<<< HEAD
  *= require 'foundation-4/css/foundation.min.css'
  *= require final
 */
+=======
+ *= require 'foundation/css/normalize.css'
+ *= require 'foundation/css/foundation.min.css'
+ *= require 'reveal/reveal.css'
+ *= require 'morris/morris.css'
+ *= require 'style.css.scss'
+ */
+>>>>>>> a9ba6bb243db98d109a2de09d358504c32567653

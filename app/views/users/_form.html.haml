@@ -1,0 +1,18 @@
+%h2
+  Register a New User
+
+
+= form_for @user, :html => {:multipart => true}, :remote => true do |f|
+  = f.text_field :name, :autofocus => true, :placeholder => 'name'
+  = f.text_field :email, :placeholder =>'email'
+  = f.text_field :address, :placeholder => 'address'
+  = f.text_field :phone, :placeholder => 'phone'
+  = f.password_field :password, :placeholder => 'password'
+  = f.password_field :password_confirmation, :placeholder => 'confirm password'
+  = f.label :is_teacher
+  = f.check_box :is_teacher
+  %br
+  %br
+  = link_to('Cancel', '#', :'data-clear-form' => true, :class => 'button small radius alert')
+  = f.submit 'Create Account', :class => 'button radius small info'
+

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FinalProject</title>
+  <title>Final Quiz</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<%= render :partial => 'layouts/nav' %>
+  <%= render :partial => 'layouts/body' %>
+  <%= render :partial => 'layouts/footer' %>
+ 
+  <script>
+  $(document).foundation();
 </body>
 </html>
