@@ -5,6 +5,7 @@ class SmsController < ApplicationController
 
     session["counter"] ||= 0
     sms_count = session["counter"]
+    Rails.logger.warn("#{sms_count}")
     if sms_count == 0
       message = "Hello, thanks for the new message."
     else
