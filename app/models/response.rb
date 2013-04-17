@@ -12,7 +12,12 @@
 #
 
 class Response < ActiveRecord::Base
-attr_accessible :answer, :is_correct
-belongs_to :question
-belongs_to :homework
+  attr_accessible :answer, :is_correct
+  belongs_to :question
+  belongs_to :homework
+
+  def is_correct?(response)
+
+  end
+
 end

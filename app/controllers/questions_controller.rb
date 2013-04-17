@@ -5,4 +5,9 @@ class QuestionsController < ApplicationController
     @assignment.questions << @question
     @answer = Answer.new
   end
+
+  def finish
+    @assignment = Assignment.find(params[:assignment_id])
+    @question = Question.new
+  end
 end

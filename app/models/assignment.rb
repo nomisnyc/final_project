@@ -10,11 +10,14 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  name        :string(255)
+#
 
 
 class Assignment < ActiveRecord::Base
-attr_accessible :description, :subject, :source_type, :name
+  attr_accessible :description, :subject, :source_type, :name
 
-has_and_belongs_to_many :tags
-has_many :questions
+  has_and_belongs_to_many :tags
+  has_many :questions
+
+
 end

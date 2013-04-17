@@ -3,3 +3,5 @@
   = f.text_area :text, :autofocus => true, :placeholder=>'Enter question here'
   = hidden_field_tag :assignment_id, @assignment.id
   = f.submit nil, :class => 'button tiny success'
+
+= link_to_function 'Assign Now', 'app.assign_now()', :class => 'button tiny radius success'
