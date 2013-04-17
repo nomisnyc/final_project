@@ -6,7 +6,7 @@ FinalProject::Application.routes.draw do
   delete '/login' => 'session#destroy'
   get '/questions/finish/:assignment_id' => 'questions#finish'
   get '/start_quiz' => 'homeworks#start'
-  post '/sms' => 'sms#create'
+  get '/sms' => 'sms#create'
   resources :users, :homeworks, :classrooms, :assignments, :questions, :tags, :responses, :answers
 
 end
