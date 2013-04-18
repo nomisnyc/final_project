@@ -1,0 +1,19 @@
+.row
+  %h2
+    Classrooms
+
+  .large-4.columns
+    = link_to 'Create New Quiz', new_assignment_path, remote: true, class: 'button tiny radius'
+    = link_to 'Load quiz', assignments_path, remote: true, class: 'button tiny radius'
+
+
+  .large-4.columns
+  = link_to('New Classroom', new_classroom_path, remote: true,  class: 'button tiny success') if @auth.present?
+  #form
+  #body
+
+  #show_classroom
+    - @classrooms.each do |classroom|
+      = classroom.subject
+
+%svg

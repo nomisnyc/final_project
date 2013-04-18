@@ -9,18 +9,18 @@ window.app =
       url: "/start_quiz"
       data: {classroom_id: classroom_id, assignment_id: assignment_id}
     $.ajax(settings)
-  show_results: ->
-    # d3.select("svg[data-question-id='44']").selectAll("rect").data(data)
-    # col_a = ['matty', 'stephen', 'jill', 'brian']
-    # col_b = ['joe', 'nicky', 'jill']
-    # col_c = ['adi']
-    # rects = d3.select('svg').selectAll('rect').data(col_a)
-
-    # d3.select("svg[data-question-id='44']").selectAll("rect").data(col_a).enter().append("rect").attr("x", function(d, i) { return i * 20; }).attr("width", 20).attr("height", 20)
-
-    # $("svg[data-question-id='44']")
-
+  clear_questions_answers: (e) ->
+    e.preventDefault()
+    $('#answer_form').empty()
+    $('#question_form').empty()
+    $('#question_form_btn form').submit()
+    $('#finish_question').toggle()
+  clear_form: (e) ->
+    e.preventDefault()
+    $('#form').slideUp "slow", ->
+    $('#form').empty()
   ready: ->
+    $('body').on('click', 'a[data-clear-form]', app.clear_form)
     x = d3.scale.linear().domain([0, d3.max(app.people)]).range([0, 420])
     y = d3.scale.ordinal().domain(app.people).rangeBands([0, 120])
     chart = d3.select('svg').attr('class', 'chart')

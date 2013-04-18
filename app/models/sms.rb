@@ -54,3 +54,7 @@ class Sms < ActiveRecord::Base
     session[:content_received] += 1
   end
 end
+
+def send_sms
+  client = Twilio::REST::Client.new(ENV['TW_SID'], ENV['TW_TOK'])
+  

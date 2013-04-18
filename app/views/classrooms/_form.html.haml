@@ -1,0 +1,9 @@
+.row
+  .large-8.columns
+    %h3
+      Create a New Classroom
+    #classroom_form
+      = form_for @classroom, :remote => true do |f|
+        = f.text_field :subject, :autofocus => true, :placeholder => 'Subject'
+        = f.text_field :teacher_id, :placeholder => 'Teacher ID'
+        = f.submit 'Create Classroom', :class => 'button tiny radius success'

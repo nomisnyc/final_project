@@ -1,0 +1,20 @@
+.row
+  .large-12.columns
+    %table
+      %h2
+        = @user.name.titleize
+      %thead
+        %tr
+          %th Email
+          %th Phone
+          %th Address
+      %tbody
+        %tr
+          %td= @user.email
+          %td= @user.phone
+          %td= @user.address
+
+    = link_to 'Create New Quiz', new_assignment_path, remote: true, class: 'button tiny radius'
+    = link_to 'Load quiz', assignments_path, remote: true, class: 'button tiny radius'
+    #form
+%svg

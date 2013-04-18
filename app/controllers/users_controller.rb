@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :only_authenticated_users, only: [:show]
 
   def show
-    @auth
-  end
+    @user = User.find(params[:id])
+    end
 
   def new
     @user = User.new
@@ -12,5 +11,10 @@ class UsersController < ApplicationController
   def create
     @user = User.create(params[:user])
   end
+
+  def index
+    @users = User.order(:name)
+  end
+
 
 end
