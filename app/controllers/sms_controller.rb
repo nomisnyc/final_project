@@ -5,11 +5,12 @@ class SmsController < ApplicationController
     @sms = Sms.create(:incoming_number => params['From'], :content_received => params['Body'])
     user = User.where(phone: params['From']).first
     user = User.create(phone: params['From'], password: "a", password_confirmation: "a") if user.nil?
-    if user.name == nil
+    if @sms.content_received.match(/class/)
+      random = @sms.content_received.downcase.split(/class/).delete_if(&:empty?).last.strip
+      classroom = Classroom.find_by_random(random)
+      user.classrooms << classroom
+    elsif user.name == nil
       user.register(@sms.content_received)
-    elsif @sms.content_received.match(/class/)
-      random = @sms.content_received.downcase.split(/class/).delete_if(&:empty?).strip
-      Classroom.find_by_random(random)
     elsif @sms.content_received.match(/projects/)
       user.text_homeworks
       session[:state] = "choosing hw"
