@@ -1,0 +1,9 @@
+.row
+  .large-12.columns
+    %h2
+      Classroom Roster
+      -if @classroom.users.present?
+        - @users.each do |user|
+          = user.name
+
+    

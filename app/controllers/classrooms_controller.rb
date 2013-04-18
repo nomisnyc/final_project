@@ -1,7 +1,6 @@
 class ClassroomsController < ApplicationController
-  def show
-    @classroom = Classroom.find(params[:id])
-    @users = @classroom.users
+  def index
+    @classrooms = Classroom.all
   end
 
   def new
@@ -10,6 +9,11 @@ class ClassroomsController < ApplicationController
 
   def create
     @classroom = Classroom.create(params[:classroom])
+  end
+
+  def show
+    @classroom = Classroom.find(params[:id])
+    @students = @classroom.students
   end
 
 

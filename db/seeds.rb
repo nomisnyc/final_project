@@ -72,11 +72,16 @@ Response.delete_all
 
 s1 = User.create(name: 'jeff', email: 'jeffkatzy@gmail.com', is_teacher: false, address: '41 Kingsclere Dr. Southampton PA 18966', phone: '215-499-7415', password: 'a', password_confirmation: 'a')
 s2 = User.create(name: 'simon', email: 'nomis@gmail.com', is_teacher: false, address: '41 Kingsclere Dr. Southampton PA 18966', phone: '215-499-7415', password: 'a', password_confirmation: 'a')
+
+s3 = User.create(name: 'mike', email: 'mike@gmail.com', is_teacher: false, address: '41 Broadway New York 10038', phone: '718-531-9887', password: 'a', password_confirmation: 'a')
+
+s4 = User.create(name: 'elise', email: 'elise@gmail.com', is_teacher: false, address: '41 Lexington Ave New York 10038', phone: '212-531-9887', password: 'a', password_confirmation: 'a')
+
 t1 = User.create(name: 'chyld', email: 'chyld@gmail.com', is_teacher: true, address: 'General Assembly', phone: '215-364-8145', password: 'a', password_confirmation: 'a')
 
 
 c1 = Classroom.create(subject: 'Math')
-c1.users = [s1, s2, t1]
+c1.users = [s1, s2, t1, s3, s4]
 
 
 

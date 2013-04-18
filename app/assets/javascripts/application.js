@@ -7,3 +7,4 @@
 //= require 'morris/morris.min.js'
 //= require 'underscore.js'
 //= require 'javascript.js'
+//= require final
