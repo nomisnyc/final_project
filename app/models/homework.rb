@@ -12,7 +12,7 @@
 #
 
 class Homework < ActiveRecord::Base
-  attr_accessible :due_date, :instruction, :grade
+  attr_accessible :due_date, :instruction, :grade, :user_id, :classroom_id
   before_create :generate_random
 
   has_and_belongs_to_many :questions
@@ -20,14 +20,8 @@ class Homework < ActiveRecord::Base
   belongs_to :user
   belongs_to :classroom
 
-  def generate_prompt
-    array = (1..self.questions.count).to_a
-    form = ""
-    array.each do |num|
-      form += "#{num}. " + "\n"
-    end
-    form += "For admin use only: #{self.random}"
-    form
+  def text
+    Text.send_text_to(user, body)
   end
 
   def self.find_by_message(message)

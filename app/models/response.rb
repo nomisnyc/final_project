@@ -12,12 +12,16 @@
 #
 
 class Response < ActiveRecord::Base
-  attr_accessible :answer, :is_correct
+  attr_accessible :answer, :is_correct, :homework_id, :question_id
   belongs_to :question
   belongs_to :homework
 
-  def is_correct?(response)
-
+  def is_correct?
+    index = self.answer.upcase[0].ord - 65
+    if self.question.answers[index].is_correct == true
+      true
+    else
+      false
+    end
   end
-
 end

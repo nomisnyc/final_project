@@ -20,4 +20,33 @@ class User < ActiveRecord::Base
   has_many :homeworks
   has_and_belongs_to_many :classrooms
 
+  def register(content_received)
+      user = User.find(self.id)
+    if user.name.nil? && content_received.match(/name/).nil?
+        message = "Looks like you are not registered.  Please text the word 'name' followed by your name to register."
+        Text.send_text_to(user.phone, message)
+    elsif user.name == nil && content_received.match(/name/)
+      user.name = content_received.downcase.split(/name/).delete_if(&:empty?).join(" ").strip
+      user.save
+      binding.pry
+      message = "Thanks #{user.name}, we now have your name."
+      Text.send_text_to(user.phone, message)
+    end
+  end
+
+  def text_homeworks
+    user = User.find(self.id)
+    if user.homeworks.present?
+      message = ""
+      user.homeworks.each_with_index do |homework, index|
+        message += "#{index + 1}. #{homework.classroom.subject}" + "\n"
+      end
+      Text.send_text_to(user.phone, message)
+    else
+      message = "You have no more assignments!"
+      Text.send_text_to(user.phone, message)
+      session[:state] = nil
+    end
+  end
+
 end

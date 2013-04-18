@@ -15,4 +15,18 @@ class Question < ActiveRecord::Base
    belongs_to :response
    belongs_to :assignment
    has_many :answers
+
+  def send_question(user)
+    question_text = self.text
+    response_text = ""
+    self.answers.each_with_index do |answer, index|
+      response_text += "  #{(65 + index).chr}. " + answer.text + "\n"
+    end
+    message = question_text + "\n" + response_text
+    Text.send_text_to(user.phone, message)
+  end
+
+  def next
+    self.class.where("#{self.class.table_name}.id > ?", self.id).first
+  end
 end

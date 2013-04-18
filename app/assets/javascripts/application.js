@@ -8,3 +8,4 @@
 //= require 'underscore.js'
 //= require 'javascript.js'
 //= require 'final'
+//= require 'd3.v3'

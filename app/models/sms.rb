@@ -21,6 +21,14 @@ class Sms < ActiveRecord::Base
   #Then assert whether each response is correct
   #finally render the result in real time.
 
+  def self.parse(content_received)
+    if content_recieved.match(/name/)
+      #parse based on registration
+    elsif content_recieved.match(/quiz/)
+    end
+  end
+
+
   def interpret_type
     if !content_received.scan(/^#1./).empty?
       parse_response
@@ -31,5 +39,18 @@ class Sms < ActiveRecord::Base
     arr = self.content_received.split(/#\d{1}./)
     arr.delete_if(&:empty?)
     arr.map(&:strip) #would send back an array of strings corresponding to each response
+  end
+
+  def session_state
+    session[:state] = ""
+
+    Rails.logger.warn("#{session[:counter]}")
+    if session[:counter] == 0
+      message = "Hello, thanks for the new message."
+    else
+      message = "Hello, thanks for message number #{session[:counter] + 1}"
+    end
+
+    session[:content_received] += 1
   end
 end

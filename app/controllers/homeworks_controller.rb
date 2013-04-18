@@ -7,10 +7,12 @@ class HomeworksController < ApplicationController
   def start
     @classroom = Classroom.find(params[:classroom_id])
     @assignment = Assignment.find(params[:assignment_id])
-    Homework.create(user: @auth.id, classroom: @classroom.id)
-    body = @homework.generate_prompt
     @classroom.students.each do |student|
-      Text.send_text_to(student, body)
+      homework = Homework.create(user_id: student.id, classroom_id: @classroom.id)
+      homework.questions = @assignment.questions
+      homework.save
+      body = "You have a new homework from your #{@classroom.subject} class. Text projects to access this homework."
+      Text.send_text_to(student.phone, body)
     end
   end
 
