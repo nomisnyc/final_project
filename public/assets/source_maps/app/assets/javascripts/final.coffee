@@ -25,6 +25,6 @@ window.app =
     y = d3.scale.ordinal().domain(app.people).rangeBands([0, 120])
     chart = d3.select('svg').attr('class', 'chart')
     chart.selectAll('rect').data(app.people).enter().append('rect').attr("x", (d, i) -> i * 51 ).attr("width", 50).attr("height", 25 )
-    chart.selectAll("text").data(app.people).enter().append("text").attr("x", (d, i) -> i * 51 ).attr("y", 10 ).text(String)
+    chart.selectAll("text").data(app.people).enter().append("text").attr("x", (d, i) -> i * 51 + 22 ).attr("y", 10 ).attr("dx", -3).attr("dy", ".35em").attr("text-anchor", "end").text(String)
 
 $(document).ready(app.ready)
