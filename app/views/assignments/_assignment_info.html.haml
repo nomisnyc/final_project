@@ -1,5 +1,7 @@
+#assignment_id{:'data-assignment-id' => @assignment.id}
 Beginning of assignment info
-%h3= @assignment.name
+%br
+%h3= @assignment.name.titleize
 %p.no_margin.tiny_text QUIZ TAGS
 - @assignment.tags.each do |tag|
   .label.success.round= tag.name

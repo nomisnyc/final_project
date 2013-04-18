@@ -1,0 +1,11 @@
+= render :partial => "questions/question", :collection => @questions, :as => :question
+
+= @assignment.name
+= @assignment.subject
+= @assignment.description
+
+- @assignment.questions.each do |question|
+  = question.text
+  - question.answers.each_with_index do |answer, index|
+    = "#{(index + 65).chr}." + answer.text
+

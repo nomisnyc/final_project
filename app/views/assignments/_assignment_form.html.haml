@@ -1,10 +1,7 @@
 = form_for @assignment, :remote => true do |f|
-  = f.label :name
   = f.text_field :name, :autofocus => true, :placeholder=>'Assignment name'
-  = f.label :description
-  = f.text_field :description
-  = f.label :subject
-  = f.text_field :subject
+  = f.text_field :description, :placeholder => 'Description'
+  = f.text_field :subject, :placeholder => 'Subject'
   = f.label 'Enter comma separated tags:'
   = text_field_tag :tags
   = f.submit 'Add Questions', :class => 'button small success'

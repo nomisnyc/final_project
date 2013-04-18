@@ -9,5 +9,4 @@ class AssignmentsController < ApplicationController
     @assignment.save
     @question = Question.new
   end
-
 end

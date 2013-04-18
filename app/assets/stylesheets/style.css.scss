@@ -1,5 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=PT+Sans);
 
+.chart div {
+  font: 10px sans-serif;
+  background-color: blue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
+
+.chart rect {
+  stroke: white;
+  fill: teal;
+}
+
+svg {
+  width: 200px;
+  height: 100px;
+}
+
 .top-bar
 {
   background: rgba(028, 052, 076, .6);
@@ -8,7 +27,7 @@
 }
 
 a#register, a#login, a#delete, a#classroom, a#profile, a#logout
-{ 
+{
   font-size: 24px;
   padding: 12px 10px;
   margin: 0px auto;
@@ -26,7 +45,7 @@ a#logout, a#register
   background: none;
 }
 
-body 
+body
 {
   background: url('bg.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -35,7 +54,7 @@ body
   font-weight: 400;
 }
 
-#container 
+#container
 { background: url('container.png') repeat;
   width: 1200px;
   margin: 10px auto;
@@ -74,7 +93,17 @@ h2
   color: #266B52;
 }
 
+h3
+{
+  font-family: 'PT Sans', sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: #266B52;
+}
+
+
 table
-{ 
+{
   border: 1px dashed grey;
 }
+

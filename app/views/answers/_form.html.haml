@@ -9,3 +9,6 @@ Enter answer choice
   = hidden_field_tag :question_id, @question.id
   <br>
   = f.submit nil, :class => 'small button submit'
+
+#finish_question
+  = link_to 'finish question', "/questions/finish/#{@question.assignment.id}", remote: true, :class => 'button tiny radius success'
